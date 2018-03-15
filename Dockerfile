@@ -3,7 +3,7 @@ FROM resin/rpi-raspbian:stretch-20180228
 
 ARG RUST_CHANNEL=stable
 
-ENV PATH $HOME/.cargo/bin:$PATH
+ENV PATH /root/.cargo/bin:$PATH
 
 RUN apt-get update -y \
  && apt-get install -y git \
