@@ -1,12 +1,15 @@
 
-FROM resin/rpi-raspbian:stretch-20180228
+FROM arm32v7/debian:stretch-20171210
 
 ARG RUST_CHANNEL=stable
 
 ENV PATH /root/.cargo/bin:$PATH
 
 RUN apt-get -y update \
- && apt-get -y install --no-install-recommends git \
+ && apt-get -y install --no-install-recommends \
+      curl \
+      ca-certificates \
+      git \
  && mkdir /source \
  && curl -sSfL https://sh.rustup.rs > rustup.sh \
  && sh rustup.sh -y --default-toolchain ${RUST_CHANNEL} \
