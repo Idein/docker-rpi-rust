@@ -1,7 +1,7 @@
 
 FROM arm32v7/debian:stretch-20171210
 
-ARG RUST_CHANNEL=stable
+ARG RUST_CHANNEL=1.24.1
 
 ENV PATH /root/.cargo/bin:$PATH
 
